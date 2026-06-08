@@ -52,13 +52,48 @@
         "properties": {
           "lineputscript.lineFeedThreshold": {
             "type": "number",
-            "description": "Line feed threshold",
+            "description": "Legacy line feed threshold. Compact formatting does not wrap lines.",
             "default": 64
           },
           "lineputscript.formatterSwitch": {
             "type": "boolean",
-            "description": "Formatter switch",
+            "description": "Enable LinePutScript document formatting.",
             "default": false
+          },
+          "lineputscript.maxFormatDocumentSize": {
+            "type": "number",
+            "description": "Maximum LPS document size in characters that the formatter will process.",
+            "default": 1048576
+          },
+          "lineputscript.languageServiceSwitch": {
+            "type": "boolean",
+            "description": "Enable LinePutScript hover, completion, diagnostics, and document symbols.",
+            "default": true
+          },
+          "lineputscript.lazyLanguageService": {
+            "type": "boolean",
+            "description": "Use visible-range and cursor-based parsing for LinePutScript language features.",
+            "default": true
+          },
+          "lineputscript.maxLanguageServiceDocumentSize": {
+            "type": "number",
+            "description": "Maximum document size in characters before document-wide language features use lazy large-file behavior.",
+            "default": 1048576
+          },
+          "lineputscript.diagnosticVisibleBufferLines": {
+            "type": "number",
+            "description": "Number of lines before and after visible ranges to include in lazy diagnostics.",
+            "default": 50
+          },
+          "lineputscript.backgroundIndexTimeBudgetMs": {
+            "type": "number",
+            "description": "Maximum milliseconds spent per background name-indexing chunk.",
+            "default": 8
+          },
+          "lineputscript.maxDocumentSymbolsForLargeFile": {
+            "type": "number",
+            "description": "Maximum LPS line symbols returned for document symbol requests.",
+            "default": 2000
           }
         }
       }
@@ -70,7 +105,7 @@
     "watch": "tsc -watch -p ./",
     "pretest": "npm run compile && npm run lint",
     "lint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js"
+    "test": "mocha ./out/**/*.test.js"
   },
   "devDependencies": {
     "@types/glob": "^8.1.0",

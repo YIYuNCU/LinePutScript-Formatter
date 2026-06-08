@@ -1,61 +1,80 @@
 {
   "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-  "name": "lps",
+  "name": "LinePutScript",
   "scopeName": "source.lps",
   "patterns": [
     {
-      "include": "#keywords"
+      "include": "#lineComment"
     },
     {
-      "include": "#strings"
+      "include": "#continuation"
+    },
+    {
+      "include": "#separator"
+    },
+    {
+      "include": "#escape"
+    },
+    {
+      "include": "#lineName"
+    },
+    {
+      "include": "#subName"
+    },
+    {
+      "include": "#info"
     }
   ],
   "repository": {
-    "keywords": {
+    "lineComment": {
+      "name": "comment.line.triple-slash.lps",
+      "match": "///.*$"
+    },
+    "continuation": {
       "patterns": [
         {
-          "name": "comment",
-          "match": "^[ \t]*///.*"
+          "name": "constant.character.newline-text-marker.lps",
+          "match": "^\\|"
         },
         {
-          "name": "entity.name.class.subSplit",
-          "match": "\\:\\|"
-        },
-        {
-          "name": "markup.bold.dataSplit",
-          "match": "#"
-        },
-        {
-          "name": "keyword.control.import.lineKey",
-          "match": "^[^#:\\|]+"
-        },
-        {
-          "name": "variable.key",
-          "match": "(?<=\\:\\|)[^\n][^#\\:\\|]*"
-        },
-        {
-          "name": "invalid",
-          "match": "[^#]+(?<!\\:\\|[ \t]*)\\n"
-        },
-        {
-          "name": "string.data",
-          "match": "(?<=#).+?(?=\\:\\|)"
-        },
-        {
-          "name": "invalid",
-          "match": ".+"
+          "name": "constant.character.newline-continuation-marker.lps",
+          "match": "^:"
         }
       ]
     },
-
-    "strings": {
-      "name": "string",
-      "begin": "\"",
-      "end": "\"",
+    "separator": {
       "patterns": [
         {
-          "name": "string",
-          "match": "\\\\."
+          "name": "punctuation.separator.sub.lps",
+          "match": ":\\|"
+        },
+        {
+          "name": "punctuation.separator.info.lps",
+          "match": "#"
+        }
+      ]
+    },
+    "escape": {
+      "name": "constant.character.escape.lps",
+      "match": "/(?:stop|equ|tab|n|r|id|com|!|\\|)"
+    },
+    "lineName": {
+      "name": "entity.name.section.line.lps",
+      "match": "^[^#:\\|/\\n]+"
+    },
+    "subName": {
+      "name": "variable.other.sub.lps",
+      "match": "(?<=:\\|)[^#:\\|/\\n]+"
+    },
+    "info": {
+      "patterns": [
+        {
+          "name": "constant.numeric.lps",
+          "match": "(?<=#)-?\\d+(?:\\.\\d+)?(?=:\\||///|$)"
+        },
+        {
+          "name": "string.unquoted.info.lps",
+          "match": "(?<=#)[^:\\|\\n]*(?=:\\||///|$)"
         }
       ]
     }
