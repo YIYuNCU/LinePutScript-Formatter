@@ -56,7 +56,7 @@
     },
     "escape": {
       "name": "constant.character.escape.lps",
-      "match": "/(?:stop|equ|tab|n|r|id|com|!|\\|)"
+      "match": "/(?:stop|equ|tab|n|r|id|com|!|\\|)(?![A-Za-z0-9_])"
     },
     "lineName": {
       "name": "entity.name.section.line.lps",
@@ -64,7 +64,7 @@
     },
     "subName": {
       "name": "variable.other.sub.lps",
-      "match": "(?<=:\\|)[^#:\\|/\\n]+"
+      "match": "(?<=:\\|)[^#:\\|\\n]+(?=#|:\\|)"
     },
     "info": {
       "patterns": [

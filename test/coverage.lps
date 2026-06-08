@@ -1,0 +1,21 @@
+money#10500:|
+computer:|name#我的电脑:|
+typedValues:|int#10:|int64#693937152000000000:|double#3.1415926:|storedFloat#3141592600:|boolTrue#True:|boolFalse#False:|negative#-0.5:|
+BetterBuyData:|LastDiscont#0:|Discont:|ScheduleBuyItems:|BuyHistory#/null:|
+stringEscapes#pipe/|,slash/!,hash/id,comma/com,tab/tab,newline/n,carriage/r,stop/stop,equal/equ:|
+literalNull#value/null:|none#/null:|note#annulling /null values:|
+stringStructure#abc=abc/nflt=114514191980000/n:|abc=abc/nflt=114514191980000/n
+convertedObject:|tc#/null:|intlist#10,20,30,40,50:|stringlistgetset#a:/!!/!|a,b/!idb,c/!!/!|/!!/!|c:|intdict#1=2/n3=4/n5=6:|
+dictionaryLine:|1#2:|3#4:|5#6:|
+food:|name#ab钙奶:|type#Drink:|Exp#4:|Strength#10:|StrengthDrink#40:|StrengthFood#5:|Health#1:|Feeling#2:|price#7.5:|graph#drink:|desc#健康美味，经济实惠:|
+work:|Type#Work:|Name#文案:|MoneyBase#8:|Graph#workone:|StrengthFood#3.5:|StrengthDrink#2.5:|Feeling#1:|Time#60:|FinishBonus#0.1:|BorderBrush#000000:|Background#413d39:|ButtonBackground#322e2b:|ButtonForeground#FFFFFF:|Foreground#ccbdad:|Left#113:|Top#315:|Width#280:|
+item5:|Image#/null:|name#L徽章:|itemtype#Item:|Price#100:|Desc#我有异议!/n请勿在法庭当证据出示:|Count#1:|Data:|CanUse#False:|Star#False:|IsSingle#True:|Visibility#True:|
+serializedLine#deflinename:/!|Name/idworkone:/!|Animat/idA_Start:/!|Type/idWork:/!|ModeType/idHappy:/!|<Name>k__BackingField/idworkone:/!|:|
+textOnly:|plain text should not be a sub key
+hashInfo#line#a#b:|sub#c#d:|text#kept
+commented#info:|sub#value:|text///注释内容///尾部保留
+///commentOnly#notARealLine:|
+multiText:|第一行:
+|第二行
+multiJoin:|第一段:
+:第二段

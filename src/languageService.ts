@@ -161,7 +161,7 @@ function addEscapes(
   value: string,
   offset: number
 ) {
-  const escapePattern = /\/(?:stop|equ|tab|n|r|id|com|!|\|)/g;
+  const escapePattern = /\/(?:stop|equ|tab|n|r|id|com|!|\|)(?![A-Za-z0-9_])/g;
   let match: RegExpExecArray | null;
 
   while ((match = escapePattern.exec(value)) !== null) {

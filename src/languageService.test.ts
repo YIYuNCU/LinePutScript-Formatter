@@ -39,6 +39,13 @@ describe("LinePutScript lazy language service", () => {
     assert.strictEqual(line.tokens[0].range.start.line, 3);
   });
 
+  it("does not parse /null as a slash-n escape token", () => {
+    const line = parseLpsLineText("item:|Image#/null:|Desc#/n:|", 0);
+    const escapes = line.tokens.filter((token) => token.kind === "escape").map((token) => token.text);
+
+    assert.deepStrictEqual(escapes, ["/n"]);
+  });
+
   it("reads only the requested line", () => {
     const reader = new CountingLineReader([
       "first:|",
